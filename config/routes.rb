@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :images
   default_url_options :host => "http://localhost:3000/"
 
   namespace :api, defaults: { format: :json } do
     resources :users
+    resources :images
   end
 
   devise_for :users,
